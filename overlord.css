@@ -1,0 +1,433 @@
+/* Overarching css.file */
+html{
+    scroll-behavior: smooth;
+}
+/* ==============================  NAVIGATIONAL PANEL ============================== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.nav-container{
+    width: 100%;
+    background-color: #800080;
+    display: flex;
+    flex-direction: row;
+}
+.logo{
+    display: inline;
+    align-items: center;
+    margin: 20px 60px;
+}
+.logo img{
+    height: 100px;
+}
+.logo img:hover{
+    filter: brightness(0.7);
+    transition: 0.4s;
+}
+.navbar{
+    float: right;
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+}
+.navbar a{
+    justify-content: flex-end;
+    text-decoration: none;
+    color: white;
+    padding: 15px 40px;
+    font-family: 'Josefin Sans';
+    font-size: 1.5rem;
+    border-radius: 12px;
+}
+.navbar a:hover{
+    background-color: #800080;
+    color: rgb(209, 209, 209);
+    transition: 0.4s;
+}
+.hamburger-container{
+    display: none;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+}
+.hamburger{
+    position: relative;
+    display: none;
+    right: 5%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    z-index: 2;
+
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+}
+.hamburger .bar, .hamburger::after, .hamburger::before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    margin: 6px 0px;
+    transition: 0.4s;
+}
+.hamburger.is-active::before{
+    transform: rotate(-45deg) translate(-11px, 5px);
+}
+.hamburger.hamburger.is-active .bar{
+    opacity: 0;
+}
+.hamburger.is-active::after{
+    transform: rotate(45deg) translate(-9px, -3px);
+}
+.mobile-nav{
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100vh;
+    background-color: #09a143;
+    opacity: 0.8;
+    padding-top: 120px;
+    transition: 0.4s;
+    z-index: 1;
+}
+.mobile-nav.is-active{
+    left: 0;
+}
+.mobile-nav a{
+    display: block;
+    text-align: center;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Josefin Sans'; 
+}
+.mobile-nav a:hover{
+    color: grey;
+}
+
+@media (max-width: 1730px){
+    .logo img{
+        height:70px;
+    }
+    .navbar a{
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+}
+@media (max-width: 1230px){
+    .logo img{
+        height:50px;
+    }
+    .navbar a{
+        padding: 15px 20px;
+        font-size: 0.8rem;
+    }
+}
+@media (max-width: 950px){
+    .logo img{
+        height:50px;
+    }
+    .navbar a{
+        padding: 15px 20px;
+        font-size: 0.6rem;
+    }
+}
+@media (max-width: 870px){
+    .navbar{
+        display: none;
+    }
+    .hamburger-container{
+        display: flex;
+        padding-right: 10%;
+    }
+    .hamburger{
+        display: block;
+    }
+}
+/* ==============================  NAVIGATIONAL PANEL ============================== */
+/* ==============================  FONT PANEL ============================== */
+
+.first-tier-header{
+    color: #8c6239;
+    font-family: Josefin Sans;
+    text-align: center;
+    /* font-size: 4rem; */
+}
+.second-tier-header{
+    color: #0B674b;
+    font-family: Josefin Sans;
+    /* font-size: 2em; */
+}
+.brown-text{
+    color: #8c6239;
+    font-family: Noto Sans;
+    /* font-size: 1.4em; */
+}
+/* ==============================  FONT PANEL ============================== */
+/* ========= BANNER RELATED =========*/
+.header-image-container img{
+    display: block;
+    max-height: 600px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0px -50px;
+}
+.header-image-container{
+    position: relative;
+}
+.content{
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content p{
+    font-family: 'Josefin Sans';
+    color: white;
+    font-weight: bold;
+}
+/* ========= BANNER RELATED =========*/
+.overall-header{
+    width: 100%;
+}
+.flag-container{
+    /* border: black 1px solid; */
+    display: flex;
+    width: 100%;
+    height: 20PX;
+    justify-content: center;
+}
+.flag-container div{
+    width:3.5%;
+    /* width: 60px; */
+    height: 20%;
+    /* height: 5px; */
+}
+.green{
+    background-color: #009344;
+}
+.white{
+    background-color: #ece4cf;
+}
+.red{
+    background-color: #cf2734;
+}
+@media (max-width: 700px){
+    .flag-container div{
+        width: 5%;
+    }
+}
+@media (max-width: 500px){
+    .flag-container div{
+        width: 8%;
+    }
+}
+/* ========= FOOTER RELATED =========*/
+
+.footer-container{
+    display: flex;
+    background: #800080;
+    flex-direction: column;
+}
+.main-footer-container{
+    display: flex;
+}
+.footer-logo-container{
+    padding: 70px 70px;
+}
+.footer-logo-container img:hover{
+    filter: brightness(0.7);
+    transition: 0.4s;
+}
+.footer-right-container{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding-right: 200px;
+}
+.navbar-footer{
+    display: flex; 
+    width: 100%;
+    padding: 30px 10px;
+}
+.navbar-footer a{
+    color: white;
+    text-decoration: none;
+    font-family: Josefin Sans;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    margin-right: 30px;
+    border-radius: 12px;
+}
+.navbar-footer a:hover{
+    background-color: #352618;
+    color: rgb(209, 209, 209);
+    transition: 0.4s;
+}
+.operating-hours-container{
+    border: white 1px solid;
+    display: flex;
+    flex-grow: 1;
+    margin-bottom: 40px;
+}
+.operating-text{
+    padding: 30px 60px;
+}
+.operating-text p{
+    color: white;
+    font-family: Josefin Sans;
+    font-size: 1.5rem;
+}
+.timing-text{
+    padding-top: 30px;
+}
+.timing-text p{
+    color: white;
+    font-family: Josefin Sans;
+    font-size: 1.5rem;
+}
+.fineprint-text{
+    padding-top: 10px;
+}
+.fineprint-text p{
+    color: white;
+    font-family: Noto Sans;
+}
+.copyright-text{
+    padding-bottom: 30px;
+}
+.copyright-text p{
+    color: white;
+    font-family: Josefin Sans;
+    text-align: center;
+}
+@media (max-width: 1920px){
+    .navbar-footer a{
+        font-size: 1.3rem;
+        margin-right: 20px;
+    }
+}
+@media (max-width: 1740px){
+    .footer-logo-container{
+        padding: 40px;
+    }
+    .footer-logo-container img{
+        height: 100px;
+    }
+    .footer-right-container{
+        padding-right: 150px;
+    }
+    .navbar-footer a{
+        font-size: 1.1rem;
+    }
+    .operating-text p, .timing-text p{
+        font-size: 1.2rem;
+    }
+    .fineprint-text p{
+        font-size: 0.8rem;
+        padding-bottom: 30px;
+    }
+    .copyright-text p{
+        font-size: 0.7rem;
+    }
+}
+@media (max-width: 1480px){
+    .footer-logo-container{
+        padding:30px;
+    }
+    .footer-logo-container img{
+        height: 80px;
+    }
+    .footer-right-container{
+        padding-right: 100px;
+    }
+    .navbar-footer{
+        padding: 20px 10px;
+    }
+    .navbar-footer a{
+        font-size: 0.9rem;
+    }
+    .operating-text p, .timing-text p{
+        font-size: 1rem;
+    }
+    .fineprint-text p{
+        font-size: 0.6rem;
+        padding-bottom: 30px;
+    }
+}
+@media (max-width: 1270px){
+    .footer-logo-container{
+        padding: 20px;
+    }
+    .footer-logo-container img{
+        height: 60px;
+    }
+    .navbar-footer a{
+        font-size: 0.7rem;
+        margin-right: 5px;
+        padding: 10px 15px;
+    }
+    .operating-text{
+        padding: 20px 40px;
+    }
+    .timing-text{
+        padding-top: 20px;
+    }
+    .operating-text p, .timing-text p{
+        font-size: 0.8rem;
+    }
+    .copyright-text p{
+        font-size: 0.4rem;
+    }
+}
+@media (max-width: 910px){
+    .navbar-footer a{
+        font-size: 0.55rem;
+        margin-right: 5px;
+        padding: 10px 15px;
+    }
+}
+@media (max-width: 830px){
+    .navbar-footer{
+        display: none;
+    }
+    .operating-text{
+        padding: 20px;
+    }
+    .fineprint-text{
+        padding-right: 10px;
+    }
+    .operating-hours-container{
+        margin-top: 20px;
+    }
+}
+@media (max-width: 600px){
+    .main-footer-container{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .footer-logo-container{
+        display: none;
+    }
+    .footer-right-container{
+        padding: 20px 30px;
+
+    }
+    .operating-hours-container{
+        margin-top: 0;
+    }
+    
+}
